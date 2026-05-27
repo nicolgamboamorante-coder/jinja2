@@ -56,6 +56,6 @@ def categorias(request: Request):
     }
     return templates.TemplateResponse(
         request=request,
-        name="categorias.html",
+        name="categoria.html",
         context={"categorias": datos},
     )
