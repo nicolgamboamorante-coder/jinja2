@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block titulo %}Planetas del Sistema Solar{% endblock %}
+{% block encabezado %}Sistema Solar{% endblock %}
+{% block contenido %}
+    <h2>Los 8 planetas</h2>
+    <ul>
+    {% for planeta in planetas %}
+        <li>
+            {% if loop.first %}
+                <strong>{{ planeta }}</strong> ⬅ el más cercano al Sol
+            {% elif loop.last %}
+                <strong>{{ planeta }}</strong> ⬅ el más lejano al Sol
+            {% else %}
+                {{ planeta }}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

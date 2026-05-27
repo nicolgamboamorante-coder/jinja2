@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block titulo %}Deporte - {{ deporte.nombre }}{% endblock %}
+{% block encabezado %}Información del Deporte{% endblock %}
+{% block contenido %}
+    <h2>{{ deporte.nombre }}</h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>Dato</th><th>Valor</th></tr>
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td>{{ deporte.nombre }}</td>
+        </tr>
+        <tr>
+            <td><strong>Jugadores por equipo</strong></td>
+            <td>{{ deporte.jugadores_por_equipo }}</td>
+        </tr>
+        <tr>
+            <td><strong>¿Usa balón?</strong></td>
+            <td>
+                {% if deporte.usa_balon %}
+                    Sí
+                {% else %}
+                    No
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}
